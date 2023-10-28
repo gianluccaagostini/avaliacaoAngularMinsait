@@ -1,5 +1,5 @@
 <h1 class="mt-3 mb-3">Produtos</h1>
-<table class="table table-striped">
+<table class="table table-striped table align-middle p-3">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -10,11 +10,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let produto of produtos">
+    <tr *ngFor="let produto of produtos" class="align-bottom">
       <th scope="row">{{produto.id}}</th>
-      <th scope="row">{{produto.codigoBarras}}</th>
-      <th scope="row">{{produto.nome}}</th>
-      <th scope="row">{{produto.preco}}</th>
+      <td scope="row">{{produto.codigoBarras}}</td>
+      <td scope="row">{{produto.nome}}</td>
+      <td scope="row">{{produto.preco | currency:'BRL'}}</td>
+      <td class="text-center">
+      <a class="btn btn-primary">
+        <i class="bi bi-pencil-square"></i>
+      </a>
+      <a class="btn btn-danger ms-1 ">
+        <i class="bi bi-trash-fill"></i>
+      </a>
+      </td>
     </tr>
+    <button type="button" class="btn btn-primary ms-2 mt-2 text-center">Cadastrar</button>
+    <button type="button" class="btn btn-dark ms-2 mt-2 text-center">Voltar</button>
   </tbody>
 </table>
