@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IProduto } from 'src/app/interfaces/produto';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
   selector: 'app-produtos',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class ProdutosComponent {
 
+  produtos: IProduto[] = [];
+  constructor(private produtosService: ProdutosService) {}
+
+  ngOnInit() {
+    this.produtosService.buscarTodos().subscribe(produtos => {
+      this.produtos = produtos;
+    }, (error) => {
+      console.log(error);
+    })
+  }
 }
