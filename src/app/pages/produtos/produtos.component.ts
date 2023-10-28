@@ -11,12 +11,14 @@ export class ProdutosComponent {
 
   produtos: IProduto[] = [];
   constructor(private produtosService: ProdutosService) {}
-
   ngOnInit() {
     this.produtosService.buscarTodos().subscribe(produtos => {
       this.produtos = produtos;
+
     }, (error) => {
       console.log(error);
     })
+    console.log(this.produtos);
+
   }
 }

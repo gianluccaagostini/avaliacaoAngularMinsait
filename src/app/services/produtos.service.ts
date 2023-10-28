@@ -8,9 +8,9 @@ import { IProduto } from '../interfaces/produto';
 export class ProdutosService {
 
   api = 'http://localhost:8080/api/produtos';
-  constructor(private http: HttpClient) { }
+  constructor(private httpCliente: HttpClient) { }
 
   buscarTodos() {
-    return this.http.get<IProduto[]>(this.api);
+    return this.httpCliente.get<IProduto[]>(this.api);
   }
 }

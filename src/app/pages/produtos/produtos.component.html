@@ -1,7 +1,7 @@
 <h1 class="mt-3 mb-3">Produtos</h1>
 <table class="table table-striped">
   <thead>
-    <tr *ngFor="let produto of produtos">
+    <tr>
       <th scope="col">ID</th>
       <th scope="col">Código de Barras</th>
       <th scope="col">Nome</th>
@@ -10,13 +10,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">{{produtos.id}}</th>
-      <th scope="row">{{produtos.codigoBarras}}</th>
-      <th scope="row">{{produtos.nome}}</th>
-      <th scope="row">{{produtos.preco}}</th>
-
+    <tr *ngFor="let produto of produtos">
+      <th scope="row">{{produto.id}}</th>
+      <th scope="row">{{produto.codigoBarras}}</th>
+      <th scope="row">{{produto.nome}}</th>
+      <th scope="row">{{produto.preco}}</th>
     </tr>
-
   </tbody>
 </table>
