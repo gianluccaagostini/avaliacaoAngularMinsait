@@ -13,4 +13,7 @@ export class ProdutosService {
   buscarTodos() {
     return this.httpCliente.get<IProduto[]>(this.api);
   }
+  cadastrarProduto(produto: IProduto) {
+    return this.httpCliente.post(this.api, produto);
+  }
 }

@@ -1,1 +1,27 @@
-<p>cadastrar-produtos works!</p>
+<h1 class="mt-3 mb-3">Cadastrar Produto</h1>
+<form [formGroup]="produtoForm" (submit)="cadastrar()">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="codigoBarras" class="form-label">Código de Barras</label>
+          <input type="text" class="form-control" id="codigoBarras"formControlName="codigoBarras">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="idade" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="idade" formControlName="nome">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="preco" class="form-label">Preço</label>
+          <input type="number" class="form-control" id="preco" formControlName="preco">
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-secondary me-1" routerLink="/produtos">Voltar</a>
+    <button class="btn btn-primary" type="submit" [disabled]="produtoForm.invalid">Cadastrar</button>
+  </div>
+</form>
