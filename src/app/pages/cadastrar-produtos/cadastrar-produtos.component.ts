@@ -22,9 +22,11 @@ export class CadastrarProdutosComponent {
     const produto:IProduto = this.produtoForm.value as IProduto;
     this.produtoService.cadastrarProduto(produto).subscribe(result => {
       Swal.fire('Legal!!', 'Usuário cadastrado com sucesso!', 'success');
+      this.produtoForm.reset();
     })
 
   }
+
 
 
 }
