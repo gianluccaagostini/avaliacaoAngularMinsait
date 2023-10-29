@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IProduto } from 'src/app/interfaces/produto';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-produtos',
@@ -27,13 +28,15 @@ export class ProdutosComponent {
     console.log(this.produtos);
   }
 
-  editar() {
+  editarProduto(id: number) {
     const produto:IProduto = this.produtoForm.value as IProduto;
-    this.produtosService.editar(produto).subscribe(result => {
+    console.log(produto);
+    /*this.produto.editar().subscribe(result => {
       console.log(produto);
+      Swal.fire('Legal!!', 'Usuário cadastrado com sucesso!', 'success');
       this.produtoForm.reset();
-    })
-
+      console.log(produto);
+    })*/
   }
 
   excluirProduto(id: number) {

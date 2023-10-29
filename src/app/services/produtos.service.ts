@@ -17,8 +17,8 @@ export class ProdutosService {
     return this.httpCliente.post(this.api, produto);
   }
 
-  editar(produto: IProduto) {
-    return this.httpCliente.put(this.api, produto);
+  editar() {
+    return this.httpCliente.put(this.api, ProdutosService);
   }
   excluir(id: number) {
     return this.httpCliente.delete<IProduto>(`http://localhost:8080/api/produtos/${id}`)
