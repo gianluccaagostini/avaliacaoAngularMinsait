@@ -13,7 +13,7 @@ export class EditarProdutosComponent {
   constructor(private produtoService: ProdutosService){}
 
   produtoEditarForm = new FormGroup ({
-    id: new FormControl(10),
+    id: new FormControl(2),
     codigoBarras: new FormControl(''),
     nome: new FormControl(''),
     preco: new FormControl(0),
@@ -21,13 +21,11 @@ export class EditarProdutosComponent {
 
   editarProduto() {
     console.log("Chegou aqui");
-    const produtoEditado:IProduto = this.produtoEditarForm.value as IProduto;
-    console.log(produtoEditado);
+
+    const produto:IProduto = this.produtoEditarForm.value as IProduto;
+    console.log(produto);
     this.produtoService.editar().subscribe(result => {
-      console.log(produtoEditado);
-      Swal.fire('Legal!!', 'Usuário cadastrado com sucesso!', 'success');
-      this.produtoEditarForm.reset();
-      console.log(produtoEditado);
+      console.log(produto);
     })
   }
 
