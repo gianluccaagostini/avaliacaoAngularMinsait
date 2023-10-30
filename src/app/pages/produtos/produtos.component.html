@@ -15,10 +15,10 @@
         <th scope="row ">{{produto.id}}</th>
         <td scope="row">{{produto.codigoBarras}}</td>
         <td scope="row">{{produto.nome}}</td>
-        <td scope="row">{{produto.preco | currency:'BRL'}}</td>
+        <td scope="row">{{produto.preco}}</td>
         <td class="text-center">
         <a class="btn btn-primary">
-          <i class="bi bi-pencil-square" routerLink="/produtos/editar"></i>
+          <i class="bi bi-pencil-square" [routerLink]="['/produtos/editar/', produto.id + '']" ></i>
         </a>
         <a class="btn btn-danger ms-1">
           <i class="bi bi-trash-fill" (click)="excluirProduto(produto.id)"></i>

@@ -29,14 +29,8 @@ export class ProdutosComponent {
   }
 
   editarProduto(id: number) {
-    const produto:IProduto = this.produtoForm.value as IProduto;
-    console.log(produto);
-    /*this.produto.editar().subscribe(result => {
-      console.log(produto);
-      Swal.fire('Legal!!', 'Usuário cadastrado com sucesso!', 'success');
-      this.produtoForm.reset();
-      console.log(produto);
-    })*/
+    let produtoAtual = this.produtos.find((produtos) => {return produtos.id === id});
+    console.log(produtoAtual);
   }
 
   excluirProduto(id: number) {
