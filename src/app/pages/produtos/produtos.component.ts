@@ -29,9 +29,26 @@ export class ProdutosComponent {
   }
 
   excluirProduto(id: number) {
-    this.produtosService.excluir(id).subscribe(produtos => {
-      this.produtos = this.produtos.filter((produto) => produto.id != id);
-    console.log(this.produtos);
+    Swal.fire({
+      title: 'Voê tem certeza?',
+      text: "Essa ação não pode ser desfeita!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, deletar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.produtosService.excluir(id).subscribe(produtos => {
+          this.produtos = this.produtos.filter((produto) => produto.id != id);
+        })
+        Swal.fire(
+          'Deletado!',
+          'O produto foi deletado',
+          'success'
+        )
+      }
     })
+
   }
 }

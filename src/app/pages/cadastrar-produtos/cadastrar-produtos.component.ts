@@ -3,6 +3,7 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IProduto } from 'src/app/interfaces/produto';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-cadastrar-produtos',
   templateUrl: './cadastrar-produtos.component.html',
@@ -21,12 +22,11 @@ export class CadastrarProdutosComponent {
   cadastrar(){
     const produto:IProduto = this.produtoForm.value as IProduto;
     this.produtoService.cadastrarProduto(produto).subscribe(result => {
-      Swal.fire('Legal!!', 'Produto cadastrado com sucesso!', 'success');
+      Swal.fire('Muito bem!!', 'Usuário cadastrado com sucesso!', 'success');
       this.produtoForm.reset();
     }, (error) => {
       const {message} = error;
-
-      Swal.fire("ERRO!", 'Código de Barras já existe', 'error');
+      Swal.fire("Deu erro!!!", message, 'error');
     }
     )
 
