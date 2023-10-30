@@ -37,7 +37,7 @@ export class EditarProdutosComponent {
   editar(){
   const produto:IProduto = this.produtoEditarForm.value as IProduto;
     this.produtoService.editarProduto(produto).subscribe(result => {
-      Swal.fire('Legal!!', 'Usuário cadastrado com sucesso!', 'success');
+      Swal.fire('Legal!!', 'Usuário alterado com sucesso!', 'success');
       this.produtoEditarForm.reset();
     })
 

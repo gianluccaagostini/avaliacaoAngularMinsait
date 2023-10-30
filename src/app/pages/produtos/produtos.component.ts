@@ -28,11 +28,6 @@ export class ProdutosComponent {
     console.log(this.produtos);
   }
 
-  editarProduto(id: number) {
-    let produtoAtual = this.produtos.find((produtos) => {return produtos.id === id});
-    console.log(produtoAtual);
-  }
-
   excluirProduto(id: number) {
     this.produtosService.excluir(id).subscribe(produtos => {
       this.produtos = this.produtos.filter((produto) => produto.id != id);

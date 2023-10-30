@@ -21,9 +21,14 @@ export class CadastrarProdutosComponent {
   cadastrar(){
     const produto:IProduto = this.produtoForm.value as IProduto;
     this.produtoService.cadastrarProduto(produto).subscribe(result => {
-      Swal.fire('Legal!!', 'Usuário cadastrado com sucesso!', 'success');
+      Swal.fire('Legal!!', 'Produto cadastrado com sucesso!', 'success');
       this.produtoForm.reset();
-    })
+    }, (error) => {
+      const {message} = error;
+
+      Swal.fire("ERRO!", 'Código de Barras já existe', 'error');
+    }
+    )
 
   }
 
