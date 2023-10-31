@@ -48,7 +48,7 @@ export class EditarProdutosComponent {
           this.editarProdutoForm.reset();
         }, (error) => {
           const { message } = error;
-          Swal.fire("Deu erro!!!", message, 'error');
+          Swal.fire("Esse código de barras já foi cadastrado para outro produto!", message , 'error');
          }
         )
         Swal.fire('Salvo!', '', 'success')

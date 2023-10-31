@@ -13,19 +13,13 @@ export class ProdutosComponent {
 
   produtos: IProduto[] = [];
   constructor(private produtosService: ProdutosService) {}
-  produtoForm = new FormGroup ({
-    id: new FormControl(0),
-    codigoBarras: new FormControl('', Validators.required),
-    nome: new FormControl('', Validators.required),
-    preco: new FormControl(0, Validators.required),
-  })
   ngOnInit() {
     this.produtosService.buscarTodos().subscribe(produtos => {
       this.produtos = produtos;
     }, (error) => {
-      console.log(error);
+      const {message} = error;
+      Swal.fire("Erro de conexão com a aplicação!", message, 'error');
     })
-    console.log(this.produtos);
   }
 
   excluirProduto(id: number) {
