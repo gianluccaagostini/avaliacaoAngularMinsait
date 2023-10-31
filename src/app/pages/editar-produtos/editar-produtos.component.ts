@@ -14,7 +14,7 @@ export class EditarProdutosComponent {
   produtos: IProduto[] = [];
   constructor(private produtoService: ProdutosService, private route: ActivatedRoute) { }
 
-  produtoEditarForm = new FormGroup({
+  editarProdutoForm = new FormGroup({
     id: new FormControl(0),
     codigoBarras: new FormControl('',[Validators.required,Validators.minLength(3), Validators.maxLength(30)]),
     nome: new FormControl('',[Validators.minLength(3), Validators.maxLength(100)]),
@@ -24,7 +24,7 @@ export class EditarProdutosComponent {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.produtoService.buscarProdutoPorId(id).subscribe(produto => {
-        this.produtoEditarForm.setValue({
+        this.editarProdutoForm.setValue({
           id: produto.id || 0,
           codigoBarras: produto.codigoBarras || '',
           nome: produto.nome || '',
@@ -35,7 +35,7 @@ export class EditarProdutosComponent {
   }
 
   editar() {
-    const produto: IProduto = this.produtoEditarForm.value as IProduto;
+    const produto: IProduto = this.editarProdutoForm.value as IProduto;
     Swal.fire({
       title: 'Você quer salvar as alteraçãoes? ',
       showDenyButton: true,
@@ -45,7 +45,7 @@ export class EditarProdutosComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.produtoService.editarProduto(produto).subscribe(result => {
-          this.produtoEditarForm.reset();
+          this.editarProdutoForm.reset();
         }, (error) => {
           const { message } = error;
           Swal.fire("Deu erro!!!", message, 'error');

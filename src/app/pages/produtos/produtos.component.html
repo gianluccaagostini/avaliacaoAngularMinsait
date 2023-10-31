@@ -19,7 +19,7 @@
         <td scope="row">{{produto.preco | currency: 'BRL'}}</td>
         <td class="text-center">
         <a class="btn btn-primary" type="button">
-          <i class="bi bi-pencil-square" [routerLink]="['/produtos/editar/', produto.id + '']" ></i>
+          <i class="bi bi-pencil-square" [routerLink]="['/produtos/editar/', produto.id ]" ></i>
         </a>
         <a class="btn btn-danger ms-1" type="button">
           <i class="bi bi-trash-fill" (click)="excluirProduto(produto.id)"></i>
