@@ -6,18 +6,36 @@
         <div class="mb-3">
           <label for="codigoBarras" class="form-label">Código de Barras</label>
           <input type="text" class="form-control" id="codigoBarras"formControlName="codigoBarras">
+          <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['required'] && produtoForm.get('codigoBarras')?.touched">
+            Código de Barras obrigatório
+          </div>
+          <div *ngIf="produtoForm.get('codigoBarras')?.errors">
+            Digite no mínimo 3 digitos
+          </div>
         </div>
       </div>
       <div class="col">
         <div class="mb-3">
-          <label for="idade" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="idade" formControlName="nome">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome">
+          <div *ngIf="produtoForm.get('nome')?.errors?.['required'] && produtoForm.get('nome')?.touched">
+            Nome obrigatório
+          </div>
+          <div *ngIf="produtoForm.get('nome')?.errors">
+            Digite no mínimo 3 caracteres
+          </div>
         </div>
       </div>
       <div class="col">
         <div class="mb-3">
           <label for="preco" class="form-label">Preço</label>
           <input type="number" class="form-control" id="preco" formControlName="preco">
+          <div *ngIf="produtoForm.get('preco')?.errors?.['required'] && produtoForm.get('preco')?.touched">
+            Preço obrigatório
+          </div>
+          <div *ngIf="produtoForm.get('preco')?.errors">
+            Digite no mínimo 1 caracteres
+          </div>
         </div>
       </div>
     </div>

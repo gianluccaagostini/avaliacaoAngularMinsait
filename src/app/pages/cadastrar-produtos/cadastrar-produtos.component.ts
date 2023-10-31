@@ -15,14 +15,14 @@ export class CadastrarProdutosComponent {
 
   produtoForm = new FormGroup ({
     id: new FormControl(0),
-    codigoBarras: new FormControl('', Validators.required),
-    nome: new FormControl('', Validators.required),
-    preco: new FormControl(0, Validators.required),
+    codigoBarras: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+    nome: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]),
+    preco: new FormControl(0, [Validators.required, Validators.minLength(1), Validators.maxLength(10)]),
   })
   cadastrar(){
     const produto:IProduto = this.produtoForm.value as IProduto;
     this.produtoService.cadastrarProduto(produto).subscribe(result => {
-      Swal.fire('Muito bem!!', 'Usuário cadastrado com sucesso!', 'success');
+      Swal.fire('Muito bem!!', 'Produto cadastrado com sucesso!', 'success');
       this.produtoForm.reset();
     }, (error) => {
       const {message} = error;

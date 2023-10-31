@@ -6,9 +6,6 @@ import { EditarProdutosComponent } from './pages/editar-produtos/editar-produtos
 
 const routes: Routes = [
   {
-    path: '', component: ProdutosComponent
-  },
-  {
     path: 'produtos', component: ProdutosComponent
   },
   {

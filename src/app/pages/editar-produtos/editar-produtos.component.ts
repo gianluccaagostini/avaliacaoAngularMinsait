@@ -16,9 +16,9 @@ export class EditarProdutosComponent {
 
   produtoEditarForm = new FormGroup({
     id: new FormControl(0),
-    codigoBarras: new FormControl(''),
-    nome: new FormControl(''),
-    preco: new FormControl(0),
+    codigoBarras: new FormControl('',[Validators.required,Validators.minLength(3), Validators.maxLength(30)]),
+    nome: new FormControl('',[Validators.minLength(3), Validators.maxLength(100)]),
+    preco: new FormControl(0,[Validators.minLength(1), Validators.maxLength(10)]),
   })
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -28,7 +28,7 @@ export class EditarProdutosComponent {
           id: produto.id || 0,
           codigoBarras: produto.codigoBarras || '',
           nome: produto.nome || '',
-          preco: produto.preco || 0.0
+          preco: produto.preco || 0
         })
       });
     }
