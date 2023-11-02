@@ -24,7 +24,7 @@ export class ProdutosComponent {
 
   excluirProduto(id: number) {
     Swal.fire({
-      title: 'Voê tem certeza?',
+      title: 'Você tem certeza?',
       text: "Essa ação não pode ser desfeita!",
       icon: 'warning',
       showCancelButton: true,
