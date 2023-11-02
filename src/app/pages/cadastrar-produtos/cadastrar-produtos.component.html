@@ -6,9 +6,9 @@
         <div class="mb-3">
           <label for="codigoBarras" class="form-label">Código de Barras</label>
           <input type="text" class="form-control" id="codigoBarras"formControlName="codigoBarras">
-          <p>Digite entre 3 e 30 caracteres</p>
+          Digite entre 3 e 30 caracteres
           <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['required'] && produtoForm.get('codigoBarras')?.touched">
-            Código de Barras obrigatório
+            *Código de Barras obrigatório
           </div>
         </div>
       </div>
@@ -16,9 +16,9 @@
         <div class="mb-3">
           <label for="nome" class="form-label">Nome</label>
           <input type="text" class="form-control" id="nome" formControlName="nome">
-          <p>Digite entre 3 e 100 caracteres</p>
+          Digite entre 3 e 100 caracteres
           <div *ngIf="produtoForm.get('nome')?.errors?.['required'] && produtoForm.get('nome')?.touched">
-            Nome obrigatório
+            *Nome obrigatório
           </div>
         </div>
       </div>
@@ -26,9 +26,9 @@
         <div class="mb-3">
           <label for="preco" class="form-label">Preço</label>
           <input type="number" class="form-control" id="preco" formControlName="preco">
-          <p>Digite entre 1 e 10 caracteres</p>
+          Digite entre 1 e 10 caracteres
           <div *ngIf="produtoForm.get('preco')?.errors?.['required'] && produtoForm.get('preco')?.touched">
-            Preço obrigatório
+            *Preço obrigatório
           </div>
         </div>
       </div>

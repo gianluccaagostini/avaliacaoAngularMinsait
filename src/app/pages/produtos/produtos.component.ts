@@ -28,8 +28,8 @@ export class ProdutosComponent {
       text: "Essa ação não pode ser desfeita!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
       confirmButtonText: 'Sim, deletar!'
     }).then((result) => {
       if (result.isConfirmed) {
