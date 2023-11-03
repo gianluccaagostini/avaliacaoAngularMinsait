@@ -9,4 +9,4 @@ Angular CLI - @angular/cli@16.2.7
 Node - v18.18.2
 
 #Vídeo do projeto em execução
-https://youtu.be/1UZYL1DHWFg
+https://youtu.be/O6hPcXHYtf0
