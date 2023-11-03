@@ -1,0 +1,20 @@
+.body{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  align-items: center;
+}
+.imagem {
+  background-image: url(./img/identidad_visual_minsait_color.jpg);
+  width: 900px;
+  height: 700px;
+  background-size: 900px;
+  background-repeat: no-repeat;
+  position: relative;
+  align-items: center;
+  margin-bottom: 30px;
+
+}
