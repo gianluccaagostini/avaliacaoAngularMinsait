@@ -18,7 +18,7 @@ export class EditarProdutosComponent {
     id: new FormControl(0),
     codigoBarras: new FormControl('',[Validators.required,Validators.minLength(3), Validators.maxLength(30)]),
     nome: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(100)]),
-    preco: new FormControl(0,[Validators.required, Validators.minLength(1), Validators.maxLength(100)]),
+    preco: new FormControl(0,[Validators.required, Validators.minLength(1), Validators.maxLength(10)]),
   })
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
